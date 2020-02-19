@@ -1,0 +1,18 @@
+$ sudo apt install mysql-server
+$ sudo mysql_secure_installation
+y
+y
+n
+y
+y
+$ sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+and change the bind-address
+FROM:
+bind-address            = 127.0.0.1
+TO:
+bind-address            = 0.0.0.0
+Once ready, reboot your MySQL server:
+$ sudo service mysql restart
+$ sudo apt install mysql-workbench
+$ sudo mysql -u root
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'SuaSenha';
